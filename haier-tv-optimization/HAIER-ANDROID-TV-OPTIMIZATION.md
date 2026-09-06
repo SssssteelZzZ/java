@@ -41,6 +41,27 @@ $ which adb
 3. Положи туда файл **`tv_optimize_windows.bat`** из этого проекта
 4. Запусти двойным кликом и иди по меню: **1 → 2 → 3 → 4 → 5**
 
+### Вариант А2 — macOS, одной командой (проще всего для мака)
+
+Открой **Терминал** (Cmd+Space → «Терминал») и вставь:
+
+```bash
+curl -fsSL -o ~/Downloads/tv.command \
+  https://raw.githubusercontent.com/SssssteelZzZ/java/claude/tv-wifi-debug-optimization-1v8014/haier-tv-optimization/mac_tv_optimize.command \
+  && bash ~/Downloads/tv.command
+```
+
+Скрипт `mac_tv_optimize.command` самодостаточный: сам скачает Android Platform
+Tools от Google (~10 МБ, без Homebrew и без пароля администратора), проведёт
+через сопряжение по коду, отключит мусор и ускорит интерфейс. Спросит только
+IP, порт и код сопряжения с экрана телевизора.
+
+Откат: `bash ~/Downloads/tv.command --restore`
+
+> Запускай именно так — через `bash файл`, а не `curl ... | bash`. При запуске
+> через конвейер скрипт не сможет прочитать твои ответы на вопросы: stdin занят
+> самим конвейером.
+
 ### Вариант Б — macOS / Linux / Git Bash
 
 ```bash
